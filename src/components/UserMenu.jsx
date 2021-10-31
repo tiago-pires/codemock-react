@@ -1,20 +1,17 @@
+import { UserIcon } from '@heroicons/react/solid'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-const PopDown = (props) => {
+const UserMenu = (props) => {
    return (
              <Menu as="div" className="ml-4 relative flex-shrink-0">
                   <div>
-                    <Menu.Button className="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <Menu.Button className="bg-white rounded-full flex text-sm">
                       <span className="sr-only">Open user menu</span>
-                      <img
-                        className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                      />
+                     <UserIcon  className="h-6 w-6 text-gray-400" aria-hidden="true" />
                     </Menu.Button>
                   </div>
                   <Transition
@@ -36,31 +33,11 @@ const PopDown = (props) => {
                           </a>
                         )}
                       </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Sign out
-                          </a>
-                        )}
-                      </Menu.Item>
                     </Menu.Items>
                   </Transition>
                 </Menu>
    )
 }
 
-export default PopDown
+export default UserMenu
    

@@ -1,12 +1,30 @@
 import { Fragment } from 'react'
-import PopDown from './PopDown.jsx'
+import UserMenu from './UserMenu.jsx'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { SearchIcon } from '@heroicons/react/solid'
+import { SearchIcon, ViewGridIcon } from '@heroicons/react/solid'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
+
+const menuItems = [
+   {
+      title: 'Your Work'
+   },
+   {
+      title: 'Projects'
+   },
+   {
+      title: 'Dashboards'
+   },
+   {
+      title: 'People'
+   },
+   {
+      title: 'Apps'
+   }
+]
 
 export default function Example() {
   return (
@@ -17,43 +35,22 @@ export default function Example() {
             <div className="flex justify-between h-16">
               <div className="flex px-2 lg:px-0">
                 <div className="flex-shrink-0 flex items-center">
-                  <img
-                    className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                    alt="Workflow"
-                  />
-                  <img
-                    className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
-                    alt="Workflow"
-                  />
+                   <ViewGridIcon className="h-6 w-6 text-gray-800" aria-hidden="true" />
+                  <div className="px-4">Jira</div>
                 </div>
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
-                  <a
-                    href="#"
-                    className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                  >
-                    Dashboard
-                  </a>
-                  <a
-                    href="#"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                  >
-                    Team
-                  </a>
-                  <a
-                    href="#"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                  >
-                    Projects
-                  </a>
-                  <a
-                    href="#"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                  >
-                    Calendar
-                  </a>
+                   {menuItems.map(item => {
+                      return (
+                        <a
+                          key={item.title}
+                          href="#"
+                          className="border-gray-300 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                        >
+                           {item.title}
+                        </a>
+                      )
+                   })}
                 </div>
               </div>
               <div className="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
@@ -96,7 +93,7 @@ export default function Example() {
                 </button>
 
                 {/* Profile dropdown */}
-                 <PopDown />
+                 <UserMenu />
               </div>
             </div>
           </div>
