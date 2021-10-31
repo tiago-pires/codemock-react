@@ -1,7 +1,6 @@
 
 /* This example requires Tailwind CSS v2.0+ */
 
-import "antd/dist/antd.css";
 import { Fragment, useState } from 'react'
 import MenuStack from './MenuStack.jsx'
 import Tree from './Tree.jsx'
