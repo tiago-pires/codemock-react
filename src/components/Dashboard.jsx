@@ -1,16 +1,18 @@
 
 /* This example requires Tailwind CSS v2.0+ */
 
-
+import "antd/dist/antd.css";
 import { Fragment, useState } from 'react'
 import MenuStack from './MenuStack.jsx'
 import Tree from './Tree.jsx'
 import { Dialog, Transition } from '@headlessui/react'
 import Header from './Header.jsx'
 import {
-  CalendarIcon,
-  ChartBarIcon,
   FolderIcon,
+  CubeIcon,
+  CodeIcon,
+  CollectionIcon,
+  GlobeIcon,
   CogIcon,
   HomeIcon,
   InboxIcon,
@@ -54,17 +56,17 @@ let files = [
 ];
 
 const projectNavigation = [
-  { name: 'Browse all', href: '#', icon: HomeIcon, current: false },
-  { name: 'Browse by teams', href: '#', icon: UsersIcon, current: false },
+  { name: 'Browse all', href: '#',  current: false },
+  { name: 'Browse by teams', href: '#', current: false },
 ]
 
 const starred = [
-  { name: 'New Zealand', href: '#', icon: HomeIcon, current: false }
+  { name: 'New Zealand', href: '#', icon: GlobeIcon, current: false }
 ]
 const productsFiltered = [
-  { name: 'JiraSoftware', href: '#', icon: HomeIcon, current: false },
-  { name: 'Jira Service Management', href: '#', icon: UsersIcon, current: false },
-  { name: 'JiraCore', href: '#', icon: FolderIcon, current: false },
+  { name: 'JiraSoftware', href: '#', icon: CubeIcon, current: false },
+  { name: 'Jira Service Management', href: '#', icon: CodeIcon, current: false },
+  { name: 'JiraCore', href: '#', icon: CollectionIcon, current: false },
 ]
 
 function classNames(...classes) {
@@ -190,7 +192,6 @@ export default function Dashboard() {
                 {/* Replace with your content */}
                 <div className="py-4">
                   <Tree />
-                  <div className="border-4 border-gray-200 border-dashed rounded-lg h-96" />
                 </div>
                 {/* /End replace */}
               </div>
@@ -201,3 +202,34 @@ export default function Dashboard() {
     </>
   )
 }
+
+
+const treeData = [
+  {
+    title: 'Earth',
+    key: 'od20',
+    children: [
+      {
+        title: 'Australia',
+        key: 'a415Ouai',
+        children: [
+          {
+            title: 'Gold Coast',
+            key: 'od2O7ghs',
+            disableCheckbox: true,
+          },
+          {
+            title: 'Sydney',
+            key: 'g7nta',
+          },
+        ],
+      },
+      {
+        title: 'Brazil',
+        key: '0-0-1',
+        children: [{ title: <span style={{ color: '#1890ff' }}>Rio de Janeiro</span>, key: '0-0-1-0' }],
+      },
+    ],
+  },
+];
+

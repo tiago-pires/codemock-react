@@ -1,23 +1,31 @@
 import { useState } from 'react'
+import { FolderIcon } from '@heroicons/react/outline'
 
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-
 export default function Tree({ data }) {
+
+   const [vis, setVis] = useState()
+
+   const handleItemClick = (item, event ) => {
+      console.log('item clicked:', event.target, item)
+   }
+
    return (
       <ul>
          {data.map((item) => {
             return (
-               <li className={classNames(
-                     item.open
-                     ? ""
-                     : "hidden"
-                  )}
-                  key={item.title} style={{ paddingLeft: '10px' }}>
-                  {item.title}
+               <li 
+                  onClick={ item => handleItemClick(item, event)}
+                  key={item.title} 
+                  style={{ paddingLeft: '10px' }}>
+                  <div className="inline-flex">
+                     <FolderIcon className="w-6 h-6 mr-1 text-gray-700"/>
+                     {item.title}
+                  </div>
                   {item.children && <Tree data={item.children} />}
                </li>
             );
@@ -26,27 +34,17 @@ export default function Tree({ data }) {
    );
 }
 
-const treeNode = ({node}) => {
-   const [childVisible, setChildrenVisibility] = useState(false)
-
-   const haschild = node.children ? true : false
-
-   return (
-      <li>
-
-      </li>
-   )
-}
-
 
 Tree.defaultProps = {
    data: [
    {
       title: "Africa",
       children: [],
+      open: true
    },
    {
       title: "Australia",
+      open: true,
       children: [
          {
             title: "Gold Coast",
@@ -54,20 +52,16 @@ Tree.defaultProps = {
 
                {
                   title: "Superbanks",
-
                   children: [
                      {
                         title: "Kirra",
                         children: [],
-                        open: true
                      },
                      {
                         title: "Snapper",
-                        children: [],
                      },
                      {
                         title: "Greenmount",
-                        children: [],
                      },
                   ],
                },
@@ -77,7 +71,7 @@ Tree.defaultProps = {
    },
    {
       title: "Brazil",
-      children: [],
+      open: true,
    },
 ]
 };

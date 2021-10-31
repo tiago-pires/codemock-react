@@ -17,7 +17,7 @@ const MenuStack = (props) => {
                   "group flex items-center px-2 py-2 text-base font-medium rounded-md"
                )}
             >
-               {(
+               { item.icon &&
                   <item.icon
                      className={classNames(
                         item.current
@@ -27,7 +27,7 @@ const MenuStack = (props) => {
                      )}
                      aria-hidden="true"
                   />
-               )}
+               }
                {item.name}
             </a>
          ))}
