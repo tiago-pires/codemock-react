@@ -4,7 +4,7 @@
 import "antd/dist/antd.css";
 import { Fragment, useState } from 'react'
 import MenuStack from './MenuStack.jsx'
-import Tree from './Tree.jsx'
+import { Tree } from 'antd'
 import { Dialog, Transition } from '@headlessui/react'
 import Header from './Header.jsx'
 import {
@@ -191,7 +191,7 @@ export default function Dashboard() {
               <div className="px-4 mx-auto max-w-7xl sm:px-6 md:px-8">
                 {/* Replace with your content */}
                 <div className="py-4">
-                  <Tree />
+                  <Tree treeData={treeData} />
                 </div>
                 {/* /End replace */}
               </div>
@@ -226,7 +226,7 @@ const treeData = [
       },
       {
         title: 'Brazil',
-        key: '0-0-1',
+        key: '26oh6',
         children: [{ title: <span style={{ color: '#1890ff' }}>Rio de Janeiro</span>, key: '0-0-1-0' }],
       },
     ],
