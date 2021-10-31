@@ -5,35 +5,32 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-
 export default function Tree({ data }) {
    return (
       <ul>
          {data.map((item) => {
             return (
-               <li className={classNames(
-                     item.open
-                     ? ""
-                     : "hidden"
-                  )}
-                  key={item.title} style={{ paddingLeft: '10px' }}>
-                  {item.title}
-                  {item.children && <Tree data={item.children} />}
-               </li>
+               <TreeNode node={item} />
             );
          })}
       </ul>
    );
 }
 
-const treeNode = ({node}) => {
+const TreeNode = ({node}) => {
    const [childVisible, setChildrenVisibility] = useState(false)
 
-   const haschild = node.children ? true : false
+   const hasChild = node.children ? true : false
 
    return (
-      <li>
-
+      <li key={node.title} style={{paddingLeft: '10px'}}>
+         <span>
+            {hasChild && (
+               <button onClick={e => setChildrenVisibility(v => !v)}>+</button>
+            )}
+            <span>{node.title}</span>
+         </span>
+         <Tree data={node} />
       </li>
    )
 }
