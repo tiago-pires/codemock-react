@@ -4,6 +4,7 @@
 
 import { Fragment, useState } from 'react'
 import MenuStack from './MenuStack.jsx'
+import Tree from './Tree.jsx'
 import { Dialog, Transition } from '@headlessui/react'
 import Header from './Header.jsx'
 import {
@@ -17,6 +18,40 @@ import {
   UsersIcon,
   XIcon,
 } from '@heroicons/react/outline'
+
+
+let files = [
+  {
+    title: "Top level 1",
+    slug: "top-level-1",
+    children: [
+      {
+        title: "Sub level 1",
+        slug: "sub-level-1",
+        children: [
+          {
+            title: "Sub Sub Level 1",
+            slug: "sub-sub-level-1",
+            children: [
+              {
+                title: "Sub Sub Level 2",
+                slug: "sub-sub-level-2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        title: "Sub level 2",
+        slug: "sub-level-2"
+      }
+    ]
+  },
+  {
+    title: "Top level 2",
+    slug: "top-level 2"
+  }
+];
 
 const projectNavigation = [
   { name: 'Browse all', href: '#', icon: HomeIcon, current: false },
@@ -154,6 +189,7 @@ export default function Dashboard() {
               <div className="px-4 mx-auto max-w-7xl sm:px-6 md:px-8">
                 {/* Replace with your content */}
                 <div className="py-4">
+                  <Tree />
                   <div className="border-4 border-gray-200 border-dashed rounded-lg h-96" />
                 </div>
                 {/* /End replace */}
