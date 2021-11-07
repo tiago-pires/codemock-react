@@ -2,9 +2,9 @@
 /* This example requires Tailwind CSS v2.0+ */
 
 import "antd/dist/antd.css";
+import TreeData from './Tree.jsx'
 import { Fragment, useState } from 'react'
 import MenuStack from './MenuStack.jsx'
-import { Tree } from 'antd'
 import { Dialog, Transition } from '@headlessui/react'
 import Header from './Header.jsx'
 import {
@@ -21,39 +21,6 @@ import {
   XIcon,
 } from '@heroicons/react/outline'
 
-
-let files = [
-  {
-    title: "Top level 1",
-    slug: "top-level-1",
-    children: [
-      {
-        title: "Sub level 1",
-        slug: "sub-level-1",
-        children: [
-          {
-            title: "Sub Sub Level 1",
-            slug: "sub-sub-level-1",
-            children: [
-              {
-                title: "Sub Sub Level 2",
-                slug: "sub-sub-level-2"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        title: "Sub level 2",
-        slug: "sub-level-2"
-      }
-    ]
-  },
-  {
-    title: "Top level 2",
-    slug: "top-level 2"
-  }
-];
 
 const projectNavigation = [
   { name: 'Browse all', href: '#',  current: false },
@@ -191,7 +158,7 @@ export default function Dashboard() {
               <div className="px-4 mx-auto max-w-7xl sm:px-6 md:px-8">
                 {/* Replace with your content */}
                 <div className="py-4">
-                  <Tree treeData={treeData} />
+                  <TreeData />
                 </div>
                 {/* /End replace */}
               </div>
@@ -202,34 +169,3 @@ export default function Dashboard() {
     </>
   )
 }
-
-
-const treeData = [
-  {
-    title: 'Earth',
-    key: 'od20',
-    children: [
-      {
-        title: 'Australia',
-        key: 'a415Ouai',
-        children: [
-          {
-            title: 'Gold Coast',
-            key: 'od2O7ghs',
-            disableCheckbox: true,
-          },
-          {
-            title: 'Sydney',
-            key: 'g7nta',
-          },
-        ],
-      },
-      {
-        title: 'Brazil',
-        key: '26oh6',
-        children: [{ title: <span style={{ color: '#1890ff' }}>Rio de Janeiro</span>, key: '0-0-1-0' }],
-      },
-    ],
-  },
-];
-
