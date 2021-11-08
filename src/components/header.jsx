@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import UserMenu from './UserMenu.jsx'
+import WorkspaceMenu from './WorkspaceMenu.jsx'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { SearchIcon, UserIcon, ViewGridIcon } from '@heroicons/react/solid'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
@@ -31,11 +32,11 @@ export default function Header() {
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
         <>
-          <div className="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
+          <div className="px-2 mx-auto sm:px-4 lg:px-8">
             <div className="flex justify-between h-16">
               <div className="flex px-2 lg:px-0">
                 <div className="flex items-center flex-shrink-0">
-                   <ViewGridIcon className="w-6 h-6 text-gray-800" aria-hidden="true" />
+                   <WorkspaceMenu />
                   <div className="px-4">Jira</div>
                 </div>
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">

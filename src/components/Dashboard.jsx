@@ -51,7 +51,7 @@ export default function Dashboard() {
         <body class="h-full">
         ```
       */}
-       <Header />
+       <Header  />
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog as="div" className="fixed inset-0 z-40 flex md:hidden" onClose={setSidebarOpen}>

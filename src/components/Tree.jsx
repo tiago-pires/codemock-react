@@ -4,86 +4,104 @@ import { PlusCircleTwoTone, MinusCircleTwoTone, CaretDownFilled, CaretRightOutli
 
 const columns = [
    {
-      title: "Name",
-      dataIndex: "name",
-      key: "name",
+      title: "Title",
+      dataIndex: "title",
+      key: "title",
+      width: "40%"
    },
    {
-      title: "Age",
-      dataIndex: "age",
-      key: "age",
-      width: "12%",
+      title: "Type",
+      dataIndex: "type",
+      key: "type",
+      width: "30%"
    },
    {
-      title: "Address",
-      dataIndex: "address",
-      width: "30%",
-      key: "address",
+      title: "Team",
+      dataIndex: "team",
+      key: "team",
    },
 ];
 
 const data = [
    {
       key: 1,
-      name: "John Brown sr.",
-      age: 60,
-      address: "New York No. 1 Lake Park",
+      title: "Africa",
+      type: "Folder",
+      team: "Group",
       children: [
          {
             key: 11,
-            name: "John Brown",
-            age: 42,
-            address: "New York No. 2 Lake Park",
+            title: "South Africa",
+            type: "Software project",
+            team: "Team of teams",
          },
          {
             key: 12,
-            name: "John Brown jr.",
-            age: 30,
-            address: "New York No. 3 Lake Park",
-            children: [
-               {
-                  key: 121,
-                  name: "Jimmy Brown",
-                  age: 16,
-                  address: "New York No. 3 Lake Park",
-               },
-            ],
+            title: "Ethiopia",
+            type: "Software project",
+            team: "",
          },
          {
             key: 13,
-            name: "Jim Green sr.",
-            age: 72,
-            address: "London No. 1 Lake Park",
-            children: [
-               {
-                  key: 131,
-                  name: "Jim Green",
-                  age: 42,
-                  address: "London No. 2 Lake Park",
-                  children: [
-                     {
-                        key: 1311,
-                        name: "Jim Green jr.",
-                        age: 25,
-                        address: "London No. 3 Lake Park",
-                     },
-                     {
-                        key: 1312,
-                        name: "Jimmy Green sr.",
-                        age: 18,
-                        address: "London No. 4 Lake Park",
-                     },
-                  ],
-               },
-            ],
+            title: "Kenya",
+            type: "Software project",
+            team: "",
          },
       ],
    },
    {
       key: 2,
-      name: "Joe Black",
-      age: 32,
-      address: "Sidney No. 1 Lake Park",
+      title: "Antartica",
+      type: 32,
+      team: "Team",
+   },
+   {
+      key: 3,
+      title: "Europe",
+      type: "Folder",
+      team: "Group",
+      children: [
+         {
+            key: 2072,
+            title: "UK",
+            type: "Folder",
+            team: "Team of teams",
+            children: [
+               {
+                  key: 2572,
+                  title: "England",
+                  type: "Software project",
+                  team: "",
+                  children: [
+                     {
+                        key: 5572,
+                        title: "City of Bristol",
+                        type: "Software project",
+                        team: "Team",
+                     },
+                     {
+                        key: 2552,
+                        title: "Londom",
+                        type: "Software project",
+                        team: "Team of teams",
+                     }
+                  ]
+               },
+               {
+                  key: 2571,
+                  title: "Scotland",
+                  type: "Software project",
+                  team: "",
+               },
+               {
+                  key: 2511,
+                  title: "Wales",
+                  type: "Software project",
+                  team: "",
+               },
+            ]
+         }
+      ]
    },
 ];
 
